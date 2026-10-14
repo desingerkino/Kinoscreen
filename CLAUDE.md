@@ -71,6 +71,7 @@ Dialogue text.
 - AI writing patterns are forbidden — see `analytics/avoid-ai-writing-tells.md`
 - Write only what the camera sees: actions, not emotions. Not "Мария грустит", but "Мария смотрит в окно, сигарета догорела нетронутой." Strong verbs, specific details.
 - Craft skills `sw-*` (structure, dialogue, scene craft, character conflict, premise/theme, genre, workflow) live in `.claude/skills/`; use them for analysis and revision. Their text is in Chinese, answers stay in Russian.
+- Skill `screenplay-writer` (`.claude/skills/screenplay-writer`) drives this project: new scenes, rewrites, analysis, character sheets, outline, `/full-check`-style audit, DOCX export. Read its SKILL.md first.
 - Drafts: each significant revision is a git commit; DOCX exports go to `versions/`
 
 ## Callbacks / Running gags

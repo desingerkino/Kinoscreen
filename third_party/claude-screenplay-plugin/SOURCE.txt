@@ -1,0 +1,1 @@
+Source: https://github.com/aslanSuleimenov/claude-screenplay-plugin v1.8.0 (MIT). Adapted into the skill .claude/skills/screenplay-writer: slash commands became plain requests, ${CLAUDE_PLUGIN_ROOT} paths rewritten, converter patched to read "**Type:**" as well as "**Тип:**".

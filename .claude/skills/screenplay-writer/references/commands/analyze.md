@@ -1,0 +1,159 @@
+Analyze a scene or the full screenplay. Argument: $ARGUMENTS (scene number, title, or empty).
+
+Do not ask the user what to analyze. Determine the mode from $ARGUMENTS and proceed immediately.
+
+---
+
+## Mode A — No argument: full screenplay analysis
+
+If `$ARGUMENTS` is empty or not provided — analyze the entire screenplay. Do not ask for clarification.
+
+1. Read CLAUDE.md — type, title, structure table, characters
+2. Read all files in scenes/ in order
+3. Check analytics/compass_artifact.md if it exists
+
+### What to check:
+
+**Logic and continuity:**
+- Timeline and dates — contradictions, jumps that don't make sense
+- Character knowledge — does a character know something they couldn't know yet?
+- Location and prop continuity — object appears/disappears, location changes without explanation
+- Character motivation gaps — actions without a clear reason
+
+**Genre contract:**
+
+Read the genre mechanics file for the project type:
+- Fiction: `references/compass/fiction/genre-mechanics.md`
+- Documentary: `references/compass/doc/genre-mechanics.md`
+
+Find the section for the project's genre. Check:
+- Are the **Must happen** obligations present?
+- Are any **Forbidden** patterns present?
+
+**Structure — beat check (fiction only):**
+
+Calculate expected beat positions from runtime in CLAUDE.md. Check whether these beats exist and where:
+
+| Beat | Expected position | Found? |
+|------|------------------|--------|
+| Opening image | ~1% | |
+| Catalyst | ~10% | |
+| Break into Two | ~20% | |
+| Midpoint (false victory/defeat) | ~50% | |
+| All is Lost | ~75% | |
+| Break into Three | ~85% | |
+| Final image | ~99% | |
+
+Also check:
+- **Protagonist's dramatic need:** one clear external goal that drives the entire screenplay — can it be stated in one sentence? If not — flag it.
+- Does the final image mirror the opening image (transformation visible)?
+- Scenes that contribute nothing — no new information, no value change
+- **Attractor distribution:** every 7–10 minutes there should be an emotional impact — revelation, reversal, humor, shock, sudden intimacy. Map the attractors across the screenplay. Flag zones longer than 10 minutes with no attractor.
+- **Pacing diagnosis:**
+  - For each scene mark value shift: present (+) or absent (–). One-word characterization: reversal / confrontation / quiet / exposition / dead.
+  - Dead zone: 3+ consecutive scenes marked (–) or "exposition/dead" — audience disengages.
+  - Overload: 3+ consecutive scenes at peak conflict (life/death stakes, direct confrontation, climactic pressure) — audience fatigues, impact diminishes.
+  - Read position before flagging: a quiet scene after All is Lost (~75%) is structural breathing room, not a dead zone. A dead zone in Fun and Games (20–50%) is a problem. Use beat positions from the check above as context.
+
+**Structure — documentary (no beat map, check instead):**
+- Is there a clear POV / argument? Or just a sequence of facts? A documentary without a filmmaker's position is not neutral — it's empty.
+- Does each block change something — reveal, complicate, or answer?
+- If the film is interview-driven: read `references/compass/doc/interview-structure.md`. Check: do any interviews function as dramatic scenes (entry → fracture → exit)? Or are they all testimony — information delivery without tension?
+- Does the opening block establish a question (not answer it)? Does the closing block land somewhere the opening didn't predict?
+
+**Format (check against CLAUDE.md scene formatting rules):**
+- Heading format violations (`# Scene NN:` or `# Block NN:`)
+- Missing slug lines (fiction) or missing VIDEO/AUDIO table (documentary)
+- Character names with asterisks (`**NAME**`) — flag as old format, should be plain CAPS
+
+**AI writing patterns** (check against `references/avoid-ai-writing-tells.md`):
+- Rule of threes, emotional placeholders, dialogue that explains feelings
+
+### Output format:
+
+```
+FULL ANALYSIS — [Title]
+Scenes: N | Est. runtime: N min
+
+LOGIC / CONTINUITY
+[issue] → Scene NN: description
+...
+If none: ✓ No issues found
+
+BEAT CHECK  (fiction only)
+Opening image:    scene 01 ✓
+Catalyst:         scene 03 ✓  (~10% — on target)
+Break into Two:   ✗  (expected ~scene 04)
+Midpoint:         scene 09 ✓  (~48% — close)
+All is Lost:      ✗  (expected ~scene 14)
+Break into Three: ✗
+Final image:      ✗
+Protagonist goal: [one sentence / unclear — flag]
+
+GENRE CONTRACT  ([genre])
+Must happen — present:   [list or ✓ all covered]
+Must happen — missing:   [list or none]
+Forbidden — violations:  [list or none]
+
+ATTRACTOR MAP  (fiction)
+~min 0–10:   [scene NN — type of attractor or ✗ gap]
+~min 10–20:  [scene NN — type of attractor or ✗ gap]
+...
+
+PACING
+NN [+/–] [reversal / confrontation / quiet / exposition / dead]
+NN [+/–] ...
+...
+Dead zones:   [scenes NN–NN — N min without value shift / none]
+Overload:     [scenes NN–NN — N min at peak conflict / none]
+Notes:        [e.g. "quiet at scene 14 is intentional — post–All is Lost breathing room"]
+
+STRUCTURE ISSUES
+[issue or observation]
+...
+If none: ✓ Structure sound
+
+FORMAT ERRORS
+Scene NN: description
+...
+If none: ✓ Format clean
+
+AI PATTERNS
+Scene NN: quoted problem line → suggested fix
+...
+If none: ✓ No AI patterns detected
+```
+
+Save nothing. Output only.
+
+---
+
+## Mode B — With argument: single scene analysis
+
+If `$ARGUMENTS` is not empty:
+
+1. Find the file in scenes/ by number or title
+2. Read the scene in full
+3. Check analytics/compass_artifact.md:
+   - If exists — read it (genre systems)
+   - If not — warn: "compass_artifact.md not found. Run /compass [genre — logline]. Analysis will continue without genre systems."
+4. Score each system from compass (1–10), if compass_artifact.md exists:
+   - Charge reversal (+ → - or - → +)?
+   - Stakes rising?
+   - Visual image without words?
+   - Story engine running?
+5. Value shift and gap:
+   - What is the dominant value at the start of the scene (safety/danger, hope/despair, connection/isolation, truth/lie, power/powerlessness — or other)?
+   - What is it at the end?
+   - Did the protagonist attempt something and get an unexpected result (gap)? Or did everything go as expected?
+   - If no value shift — flag: the scene does not earn its place
+5. Check subtext:
+   - Does each character say one thing while wanting another? Or do they state their feelings and intentions directly?
+   - Is there a surface conflict and a real conflict — or only one?
+   - If a character explains their own emotions in dialogue — flag the specific line
+6. Check against `references/avoid-ai-writing-tells.md` — forbidden patterns?
+7. Point out specific problem lines
+8. Suggest fixes in BEFORE → AFTER format
+9. Answer: can this scene be cut without losing anything? If yes — what exactly would be lost, and can it be conveyed another way?
+
+Save nothing. Analysis and recommendations only.
