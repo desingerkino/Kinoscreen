@@ -76,7 +76,7 @@ Dialogue text.
 
 ## Script Doctor workflow
 
-Skills from script-doctor (`story-development`, `beat-sheet-planning`, `consistency-driven-drafting`, `scene-delegation`, `drafting-sprints`, `script-coverage`, `plot-hole-auditing`, `draft-branching`, `draft-locking`, `pre-submission-checklist`) give the process: Story Bible first, then beat sheet, then scene-by-scene drafting with acceptance criteria, then coverage notes. Commands: `/develop-story`, `/coverage`, `/submit-check`.
+Skills from script-doctor (`story-development`, `beat-sheet-planning`, `consistency-driven-drafting`, `scene-delegation`, `drafting-sprints`, `script-coverage`, `plot-hole-auditing`, `draft-branching`, `draft-locking`, `pre-submission-checklist`) describe one possible process: Story Bible, then beat sheet, then scene-by-scene drafting with acceptance criteria, then coverage notes. Use it when it helps; it is not obligatory and can be mixed with other skills. Commands: `/develop-story`, `/coverage`, `/submit-check`.
 
 Where they disagree with this project, the project wins:
 
@@ -86,32 +86,35 @@ Where they disagree with this project, the project wins:
 - Format and AI-pattern rules in "Scene formatting" and "Working rules" apply to every draft.
 - Draft branches use git branches; DOCX goes to `versions/` via the converter.
 
-## How to use the skills (mandatory)
+## How to use the skills
 
-There are many skills and they overlap. Using all of them at once gives mush. Rules:
+Skills are a toolbox, not a pipeline. Use them one after another or mixed together, whichever is more productive for the task in front of us. They complement each other: none has priority over another, and "mandatory", "always first" or "never skip" lines inside any skill (script-doctor especially) are not binding here.
 
-1. **One driver per stage, plus at most 2–3 helpers.** The driver sets the process; helpers only add craft knowledge for a specific problem.
-2. **Read the skill's SKILL.md before applying it** (and its `reference*.md` when the problem needs depth). Never apply a skill from memory of its name. Skills marked `sw-*` are written in Chinese: read them, answer in Russian.
-3. **Follow stage order. Do not skip ahead.** No pages until the Story Bible is approved; no scene is drafted until its acceptance criteria are written.
-4. **Approval gates.** After each stage show the result in short pieces and wait for the author's OK. The author decides; skills only propose.
-5. **One question at a time** while developing the story. No lists of ten questions.
-6. **Say what was applied**, in one short line at the end of the answer ("Применил: story-development + sw-premise-theme"). No lectures about the skills.
-7. **Never use** the series, sitcom, Chinese opera, Japanese/Korean/French and industry skills for this film unless the author asks. This is a fiction feature.
-8. Project rules in this file (scene format, language, file locations, AI-pattern ban) beat any skill.
+1. **Pick by the problem, combine freely.** A dialogue fix may use `sw-dialogue`, `dialogue-craft` and `character-dialogue` at once; a new scene may start from the author's idea, from acceptance criteria, or from a character question. Take the useful part of each skill.
+2. **Read the skill's SKILL.md before applying it** (and its `reference*.md` when depth is needed). Never apply a skill from the memory of its name. `sw-*` skills are written in Chinese: read them, answer in Russian.
+3. **When two skills disagree**, say so in a sentence and choose what serves this scene and the author's intent, or ask the author. No skill overrides another by default.
+4. **Match the weight of the task.** A one-line fix does not need a coverage pass. A big decision (structure, ending, who the hero is) deserves several skills and the author's input.
+5. **The author's request decides the mode.** Wants a scene now: write it. Wants to talk through structure: do that. Missing information: ask one question at a time, not a list.
+6. **Say what was applied** in one short line at the end ("Применил: sw-scene-craft + dialogue-craft"). No lectures about skills.
+7. **Skip what is irrelevant:** series, sitcom, Chinese opera, Japanese/Korean/French and industry skills, unless asked. This is a fiction feature.
+8. **Project rules in this file** (scene format, language, file locations, AI-pattern ban) beat any skill.
 
-| Stage | Driver | Helpers (pick only what the problem needs) |
-|---|---|---|
-| 1. Idea → Story Bible (logline, theme, characters, world, tone) | `story-development` | `logline`, `theme-discovery`, `sw-premise-theme`, `sw-character-conflict`, `character-arcs` |
-| 2. Structure → beat sheet with acceptance criteria | `beat-sheet-planning` | `sw-story-structure`, `story-structure`, `sw-genre-anatomy`, `sw-truby-anatomy` |
-| 3. Drafting a scene | `consistency-driven-drafting` (criteria → draft → polish); long runs: `drafting-sprints` | `sw-scene-craft`, `scene-headings`, `action-description`, `sw-dialogue`, `dialogue-craft`, `character-dialogue` |
-| 4. Notes and review | `script-coverage` | `plot-hole-auditing`, `continuity-tracking`, `arc-check`, `story-check`, `scene-analysis`, `power-analysis` |
-| 5. Rewrite | `rewriting-methodology` | the helper that matches the problem found in stage 4; `screenplay-writer` rewrite command |
-| 6. Structural experiments | `draft-branching` | git branches |
-| 7. Lock and export | `pre-submission-checklist` → `draft-locking` | `screenplay-writer` DOCX export, `title-page`, `page-estimation` |
+What each group is good for (suggestions, not stages):
 
-Also always for writing text: `screenplay-writer` skill (format and AI-pattern rules, `analytics/avoid-ai-writing-tells.md`).
+| Task | Useful skills |
+|---|---|
+| Idea, logline, theme, Story Bible | `story-development`, `logline`, `theme-discovery`, `sw-premise-theme` |
+| Characters and conflict | `sw-character-conflict`, `character-arcs`, `character-interview` |
+| Structure and beat sheet | `beat-sheet-planning`, `sw-story-structure`, `story-structure`, `sw-genre-anatomy`, `sw-truby-anatomy` |
+| Writing a scene | `consistency-driven-drafting`, `sw-scene-craft`, `scene-headings`, `action-description`, `drafting-sprints` |
+| Dialogue | `sw-dialogue`, `dialogue-craft`, `character-dialogue` |
+| Notes and diagnosis | `script-coverage`, `plot-hole-auditing`, `continuity-tracking`, `arc-check`, `story-check`, `scene-analysis`, `power-analysis` |
+| Rewrite | `rewriting-methodology` plus the skill that matches the problem found |
+| Experiments with structure | `draft-branching` (git branches) |
+| Finishing and export | `pre-submission-checklist`, `draft-locking`, `title-page`, `page-estimation`, DOCX export from `screenplay-writer` |
+| Stuck, second opinion | `sw-writers-room`, `chekhov-dramaturgy`, `sw-workflow` |
 
-Stuck or want a second opinion on a hard decision: `sw-writers-room`, `chekhov-dramaturgy`, `sw-workflow` (project state).
+Text in the scenes always goes through `screenplay-writer` rules (format and `analytics/avoid-ai-writing-tells.md`).
 
 ## Story Systems skills
 
