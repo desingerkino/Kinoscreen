@@ -1,0 +1,1 @@
+Source: https://github.com/bybren-llc/story-systems-template (MIT). Only the 24 skills from .claude/skills/ were copied unmodified. Agents, commands, hooks, settings.json, Gemini files and tooling were NOT imported: the hooks (e.g. guard-git blocks pushes to main) and the Fountain/.wtfb session layout conflict with this project.

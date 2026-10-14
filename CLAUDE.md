@@ -86,6 +86,10 @@ Where they disagree with this project, the project wins:
 - Format and AI-pattern rules in "Scene formatting" and "Working rules" apply to every draft.
 - Draft branches use git branches; DOCX goes to `versions/` via the converter.
 
+## Story Systems skills
+
+24 skills from story-systems-template (`logline`, `story-structure`, `character-arcs`, `dialogue-craft`, `continuity-tracking`, `rewriting-methodology`, `synopsis`, `pitch-worksheet`, `power-analysis`, `scene-analysis` and others) are installed as reference craft. They assume Fountain files and a `story-bible/` layout. Here the scene format stays Markdown in `scenes/` (see "Scene formatting"); use `fountain-syntax`, `format-export` and `title-page` only if a Fountain/PDF export is requested.
+
 ## Callbacks / Running gags
 
 | Element | From → To |
