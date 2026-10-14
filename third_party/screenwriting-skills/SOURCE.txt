@@ -1,0 +1,1 @@
+Source: https://github.com/jtydhr88/screenwriting-skills (MIT, see LICENSE and NOTICE). Skills copied unmodified into .claude/skills/.
