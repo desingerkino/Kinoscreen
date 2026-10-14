@@ -127,15 +127,19 @@ def make_title_page(doc):
     genre = ""
     if claude_md.exists():
         text = claude_md.read_text(encoding="utf-8-sig")
-        m = re.search(r'\*\*Название:\*\*\s*(.+)', text)
+        m = re.search(r'\*\*(?:Название|Title):\*\*\s*(.+)', text)
         if m:
             title = m.group(1).strip()
-        m = re.search(r'\*\*Логлайн:\*\*\s*(.+)', text)
+        m = re.search(r'\*\*(?:Логлайн|Logline):\*\*\s*(.+)', text)
         if m:
             logline = m.group(1).strip()
-        m = re.search(r'\*\*Жанр:\*\*\s*(.+)', text)
+            if logline in ("—", "-"):
+                logline = ""
+        m = re.search(r'\*\*(?:Жанр|Genre):\*\*\s*(.+)', text)
         if m:
             genre = m.group(1).strip()
+            if genre in ("—", "-"):
+                genre = ""
 
     # Top spacing ~1/3 page
     spacer = doc.add_paragraph()
@@ -226,6 +230,7 @@ def convert_fiction(doc, scene_files):
             if s.startswith("# "):
                 text = s[2:].strip()
                 scene_count += 1
+                text = re.sub(r'^Scene\b', 'Сцена', text, flags=re.I)
                 p = doc.add_paragraph()
                 p.paragraph_format.space_before = Pt(24)
                 display = text.upper()
@@ -412,6 +417,7 @@ def convert_documentary(doc, scene_files):
             if s.startswith("# "):
                 text = s[2:].strip()
                 block_count += 1
+                text = re.sub(r'^Block\b', 'Блок', text, flags=re.I)
                 p = doc.add_paragraph()
                 p.paragraph_format.space_before = Pt(18)
                 p.paragraph_format.space_after = Pt(6)

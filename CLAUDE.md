@@ -32,6 +32,11 @@ Working language: **Russian**. All responses, comments and scene text in Russian
 
 | # | File | Act/Loop | Key event | Status |
 |---|------|----------|-----------|--------|
+| 01 | scenes/01_metro.md | Act I | Вася у метро излагает «теорию покупки», спорит с Коляном на пиво, что возьмёт ботинки за семьсот | Draft |
+| 02 | scenes/02_tamara.md | Act I | Вася «обыгрывает» Тамару в торге; пока он пересчитывает сдачу, коробку подменяют | Draft |
+| 03 | scenes/03_luzha.md | Act II | Вскрытая коробка: плохие ботинки, подошва «открывает рот» в луже; пари он технически выиграл | Draft |
+| 04 | scenes/04_vozvrat.md | Act II | Вася возвращается, Тамара обращает его же правила против него | Draft |
+| 05 | scenes/05_kukhnya.md | Act II | Мама достаёт отцовские ботинки: «Как на тебя шили. А я не вру» | Draft |
 
 ### Structural beats
 
@@ -132,3 +137,4 @@ Text in the scenes always goes through `screenplay-writer` rules (format and `an
 | Date | Change |
 |------|--------|
 | 2026-10-14 | Project initialized (type: fiction, title: Вася) |
+| 2026-10-14 | Пробный черновик scenes 01–05 (Черкизон, 2002), ≈6 страниц; DOCX: versions/Vasya_v01.docx |
