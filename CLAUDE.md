@@ -86,6 +86,33 @@ Where they disagree with this project, the project wins:
 - Format and AI-pattern rules in "Scene formatting" and "Working rules" apply to every draft.
 - Draft branches use git branches; DOCX goes to `versions/` via the converter.
 
+## How to use the skills (mandatory)
+
+There are many skills and they overlap. Using all of them at once gives mush. Rules:
+
+1. **One driver per stage, plus at most 2–3 helpers.** The driver sets the process; helpers only add craft knowledge for a specific problem.
+2. **Read the skill's SKILL.md before applying it** (and its `reference*.md` when the problem needs depth). Never apply a skill from memory of its name. Skills marked `sw-*` are written in Chinese: read them, answer in Russian.
+3. **Follow stage order. Do not skip ahead.** No pages until the Story Bible is approved; no scene is drafted until its acceptance criteria are written.
+4. **Approval gates.** After each stage show the result in short pieces and wait for the author's OK. The author decides; skills only propose.
+5. **One question at a time** while developing the story. No lists of ten questions.
+6. **Say what was applied**, in one short line at the end of the answer ("Применил: story-development + sw-premise-theme"). No lectures about the skills.
+7. **Never use** the series, sitcom, Chinese opera, Japanese/Korean/French and industry skills for this film unless the author asks. This is a fiction feature.
+8. Project rules in this file (scene format, language, file locations, AI-pattern ban) beat any skill.
+
+| Stage | Driver | Helpers (pick only what the problem needs) |
+|---|---|---|
+| 1. Idea → Story Bible (logline, theme, characters, world, tone) | `story-development` | `logline`, `theme-discovery`, `sw-premise-theme`, `sw-character-conflict`, `character-arcs` |
+| 2. Structure → beat sheet with acceptance criteria | `beat-sheet-planning` | `sw-story-structure`, `story-structure`, `sw-genre-anatomy`, `sw-truby-anatomy` |
+| 3. Drafting a scene | `consistency-driven-drafting` (criteria → draft → polish); long runs: `drafting-sprints` | `sw-scene-craft`, `scene-headings`, `action-description`, `sw-dialogue`, `dialogue-craft`, `character-dialogue` |
+| 4. Notes and review | `script-coverage` | `plot-hole-auditing`, `continuity-tracking`, `arc-check`, `story-check`, `scene-analysis`, `power-analysis` |
+| 5. Rewrite | `rewriting-methodology` | the helper that matches the problem found in stage 4; `screenplay-writer` rewrite command |
+| 6. Structural experiments | `draft-branching` | git branches |
+| 7. Lock and export | `pre-submission-checklist` → `draft-locking` | `screenplay-writer` DOCX export, `title-page`, `page-estimation` |
+
+Also always for writing text: `screenplay-writer` skill (format and AI-pattern rules, `analytics/avoid-ai-writing-tells.md`).
+
+Stuck or want a second opinion on a hard decision: `sw-writers-room`, `chekhov-dramaturgy`, `sw-workflow` (project state).
+
 ## Story Systems skills
 
 24 skills from story-systems-template (`logline`, `story-structure`, `character-arcs`, `dialogue-craft`, `continuity-tracking`, `rewriting-methodology`, `synopsis`, `pitch-worksheet`, `power-analysis`, `scene-analysis` and others) are installed as reference craft. They assume Fountain files and a `story-bible/` layout. Here the scene format stays Markdown in `scenes/` (see "Scene formatting"); use `fountain-syntax`, `format-export` and `title-page` only if a Fountain/PDF export is requested.
