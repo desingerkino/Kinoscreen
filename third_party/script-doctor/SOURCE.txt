@@ -1,0 +1,1 @@
+Source: https://github.com/bflandev/script-doctor v1.0.0 (MIT). Skills and commands copied unmodified into .claude/skills/ and .claude/commands/. Project-specific precedence rules are in CLAUDE.md ("Script Doctor workflow").

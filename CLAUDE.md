@@ -74,6 +74,18 @@ Dialogue text.
 - Skill `screenplay-writer` (`.claude/skills/screenplay-writer`) drives this project: new scenes, rewrites, analysis, character sheets, outline, `/full-check`-style audit, DOCX export. Read its SKILL.md first.
 - Drafts: each significant revision is a git commit; DOCX exports go to `versions/`
 
+## Script Doctor workflow
+
+Skills from script-doctor (`story-development`, `beat-sheet-planning`, `consistency-driven-drafting`, `scene-delegation`, `drafting-sprints`, `script-coverage`, `plot-hole-auditing`, `draft-branching`, `draft-locking`, `pre-submission-checklist`) give the process: Story Bible first, then beat sheet, then scene-by-scene drafting with acceptance criteria, then coverage notes. Commands: `/develop-story`, `/coverage`, `/submit-check`.
+
+Where they disagree with this project, the project wins:
+
+- Story Bible → `docs/script-doctor/story-bible.md`, beat sheet → `docs/script-doctor/beat-sheet.md`, coverage → `docs/script-doctor/coverage/` (as the skills say).
+- Scenes are NOT written to `drafts/*.fountain`. They go to `scenes/NN_title.md` in the format above, and the scene table and change log in this file stay current.
+- Fill the Project fields above (logline, genre, theme, characters) from the approved Story Bible.
+- Format and AI-pattern rules in "Scene formatting" and "Working rules" apply to every draft.
+- Draft branches use git branches; DOCX goes to `versions/` via the converter.
+
 ## Callbacks / Running gags
 
 | Element | From → To |
